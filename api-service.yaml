@@ -1,0 +1,27 @@
+spring:
+  profiles: heroku
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
+zuul:
+  prefix: /api
+  routes:
+    tournament-service:
+      path: /**
+      serviceId: tournament-service
+---
+spring:
+  profiles: local
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://localhost:8100/eureka/
+zuul:
+  prefix: /api
+  routes:
+    tournament-service:
+      path: /**
+      serviceId: tournament-service
+server:
+  port: 8102
