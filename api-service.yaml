@@ -16,7 +16,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://localhost:8100/eureka/
+      defaultZone: http://localhost:8100/eureka/
 zuul:
   prefix: /api
   routes:
