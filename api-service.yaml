@@ -10,6 +10,9 @@ zuul:
     tournament-service:
       path: /**
       serviceId: tournament-service
+endpoints:
+  info:
+    enabled: true
 ---
 spring:
   profiles: local
@@ -25,3 +28,6 @@ zuul:
       serviceId: tournament-service
 server:
   port: 8102
+endpoints:
+  info:
+    enabled: true
