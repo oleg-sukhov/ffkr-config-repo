@@ -9,7 +9,7 @@ zuul:
   routes:
     tournament-service:
       path: /**
-      url: https://ffkr-tournament-service.herokuapp.com
+      serviceId: tournament-service
 endpoints:
   info:
     enabled: true
@@ -28,6 +28,3 @@ zuul:
       serviceId: tournament-service
 server:
   port: 8102
-endpoints:
-  info:
-    enabled: true
