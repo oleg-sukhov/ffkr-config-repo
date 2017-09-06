@@ -4,6 +4,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
+  instance:
+    hostname: ffkr-tournament-service.herokuapp.com
+    nonSecurePort: 80    
 security:
   basic:
     enabled: false
