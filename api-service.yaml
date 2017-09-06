@@ -5,16 +5,16 @@ eureka:
     serviceUrl:
       defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
   instance:
-    hostname: ffkr-discovery-service.herokuapp.com     
+    hostname: ffkr-discovery-service.herokuapp.com
 zuul:
   prefix: /api
   routes:
     tournament-service:
       path: /**
       serviceId: tournament-service
-endpoints:
-  info:
-    enabled: true
+management:
+  security:
+    enabled: false
 ---
 spring:
   profiles: local
