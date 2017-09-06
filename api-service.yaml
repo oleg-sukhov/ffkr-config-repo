@@ -5,7 +5,7 @@ eureka:
     serviceUrl:
       defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
   instance:
-    hostname: https://ffkr-api-service.herokuapp.com     
+    hostname: ffkr-discovery-service.herokuapp.com     
 zuul:
   prefix: /api
   routes:
