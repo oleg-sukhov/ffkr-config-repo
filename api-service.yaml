@@ -22,8 +22,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
-  instance:
-    hostname: localhost    
 zuul:
   prefix: /api
   routes:
