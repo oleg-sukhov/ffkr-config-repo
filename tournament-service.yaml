@@ -15,6 +15,7 @@ management:
     enabled: false
 
 ---
+
 spring:
   profiles: local
   datasource:
@@ -25,6 +26,27 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
+server:
+  port: 8103
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false
+
+---
+
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:postgresql://tournament-db:5432/ffkr
+    username: os
+    password: os
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8100/eureka/
 server:
   port: 8103
 security:
