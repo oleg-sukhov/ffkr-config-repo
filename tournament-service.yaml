@@ -1,12 +1,18 @@
 spring:
   profiles: heroku
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
 eureka:
   client:
     serviceUrl:
       defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
   instance:
     hostname: ffkr-tournament-service.herokuapp.com
-    nonSecurePort: 80    
+    nonSecurePort: 80
 security:
   basic:
     enabled: false
@@ -22,6 +28,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/ffkr
     username: os
     password: os
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
 eureka:
   client:
     serviceUrl:
@@ -43,6 +55,12 @@ spring:
     url: jdbc:postgresql://tournament-db:5432/ffkr
     username: os
     password: os
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
 eureka:
   client:
     serviceUrl:
