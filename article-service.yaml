@@ -41,20 +41,20 @@ ffkr:
 
 spring:
   profiles: docker
-  #thymeleaf:
-  #  checkTemplateLocation: false
-  #data:
-  #  mongodb:
-  #    host: localhost
-  #    port: 27017
-  #    database: admin
-  #    password: os
-  #    username: os
-  #rabbitmq:
-  #    host: 127.0.0.1
-  #    port: 5672
-  #    username: os
-  #    password: os
+  hymeleaf:
+    checkTemplateLocation: false
+  data:
+    mongodb:
+      host: news-db
+      port: 27017
+      database: admin
+      password: os
+      username: os
+  rabbitmq:
+      host: news-queue
+      port: 5672
+      username: os
+      password: os
 eureka:
   client:
     serviceUrl:
