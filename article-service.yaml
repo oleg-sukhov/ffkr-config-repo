@@ -1,0 +1,63 @@
+spring:
+  profiles: heroku
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
+  instance:
+    hostname: ffkr-article-service.herokuapp.com
+---
+spring:
+  profiles: local
+  thymeleaf:
+    checkTemplateLocation: false
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: admin
+      password: os
+      username: os
+  rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: os
+      password: os
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+server:
+  port: 8105
+logging:
+  config: classpath:logback.xml
+ffkr:
+  article:
+    crawler:
+      start-page: http://football.ua/newsarc/page%d.html
+    image-location: /Users/os/ffkr
+
+---
+
+spring:
+  profiles: docker
+  #thymeleaf:
+  #  checkTemplateLocation: false
+  #data:
+  #  mongodb:
+  #    host: localhost
+  #    port: 27017
+  #    database: admin
+  #    password: os
+  #    username: os
+  #rabbitmq:
+  #    host: 127.0.0.1
+  #    port: 5672
+  #    username: os
+  #    password: os
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8100/eureka/
+server:
+  port: 8105
