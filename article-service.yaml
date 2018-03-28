@@ -61,3 +61,10 @@ eureka:
       defaultZone: http://discovery-service:8100/eureka/
 server:
   port: 8105
+logging:
+  config: classpath:logback.xml
+ffkr:
+  article:
+    crawler:
+      start-page: http://football.ua/newsarc/page%d.html
+    image-location: /Users/os/ffkr
