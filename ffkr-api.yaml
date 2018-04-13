@@ -3,15 +3,15 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
+      defaultZone: https://ffkr-discovery.herokuapp.com/eureka/
   instance:
-    hostname: ffkr-api-service.herokuapp.com
+    hostname: ffkr-api.herokuapp.com
 zuul:
   prefix: /api
   routes:
-    tournament-service:
+    ffkr-tournament:
       path: /**
-      serviceId: tournament-service
+      serviceId: ffkr-tournament
 management:
   security:
     enabled: false
@@ -27,9 +27,9 @@ eureka:
 zuul:
   prefix: /api
   routes:
-    tournament-service:
+    ffkr-tournament:
       path: /**
-      serviceId: tournament-service
+      serviceId: ffkr-tournament
 server:
   port: 8102
 management:
@@ -44,12 +44,12 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery-service:8100/eureka/
+      defaultZone: http://ffkr-discovery:8100/eureka/
 zuul:
   prefix: /api
   routes:
-    tournament-service:
+    ffkr-tournament:
       path: /**
-      serviceId: tournament-service
+      serviceId: ffkr-tournament
 server:
   port: 8102
