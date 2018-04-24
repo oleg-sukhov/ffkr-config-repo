@@ -19,7 +19,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
 zuul:
-  prefix: /api
+  prefix: /api/tournament
   routes:
     ffkr-tournament:
       path: /**
@@ -40,7 +40,7 @@ eureka:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
 zuul:
-  prefix: /api
+  prefix: /api/tournament
   routes:
     ffkr-tournament:
       path: /**
