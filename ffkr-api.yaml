@@ -3,6 +3,7 @@ server:
 management:
   endpoints:
     enabled-by-default: false
+  endpoint:
     info:
       enabled: true
     configprops:
