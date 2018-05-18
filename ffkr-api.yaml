@@ -3,7 +3,12 @@ server:
 management:
   endpoints:
     enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
   endpoint:
+    health:
+      enabled: true
     info:
       enabled: true
     configprops:
