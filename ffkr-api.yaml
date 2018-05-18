@@ -46,10 +46,10 @@ zuul:
   prefix: /api           
   routes:
     ffkr-tournament:
-      path: /tournament-service/**
+      path: /games/**
       serviceId: ffkr-tournament
     ffkr-article:
-      path: /article-service/**
+      path: /articles/**
       serviceId: ffkr-article
 server:
   port: 8102
