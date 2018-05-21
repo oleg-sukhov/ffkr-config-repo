@@ -48,6 +48,6 @@ eureka:
 zuul:
   prefix: /api
   routes:
-    articles:
+    ffkr-article:
       path: /articles/**
       serviceId: ffkr-article
