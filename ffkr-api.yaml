@@ -46,7 +46,8 @@ eureka:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
 zuul:
+  prefix: /api
   routes:
     articles:
-      path: /api/articles/**
+      path: /articles/**
       serviceId: ffkr-article
