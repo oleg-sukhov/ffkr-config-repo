@@ -51,3 +51,4 @@ zuul:
     ffkr-article:
       path: /articles/**
       serviceId: ffkr-article
+      strip-prefix: false
