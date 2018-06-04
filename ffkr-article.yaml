@@ -35,7 +35,7 @@ ffkr:
   article:
     crawler:
       start-page: http://football.ua/newsarc/page%d.html
-    image-location: /usr/local/share/ffkr
+    image-location: /usr/local/share/ffkr/photos
 ---
 
 spring:
@@ -66,4 +66,4 @@ ffkr:
   article:
     crawler:
       start-page: http://football.ua/newsarc/page%d.html
-    image-location: /usr/local/share/ffkr
+    image-location: /usr/local/share/ffkr/photos
