@@ -1,0 +1,54 @@
+server:
+  port: 8102
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    configprops:
+      enabled: true
+---
+spring:
+  profiles: heroku
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://ffkr-discovery.herokuapp.com/eureka/
+  instance:
+    hostname: ffkr-api.herokuapp.com
+---
+spring:
+  profiles: local
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+zuul:
+  prefix: /api
+  routes:
+    ffkr-tournament:
+      path: /tournament-service/**
+      serviceId: ffkr-tournament
+    ffkr-article:
+      path: /article-service/**
+      serviceId: ffkr-article
+---
+spring:
+  profiles: docker
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ffkr-discovery:8100/eureka/
+zuul:
+  prefix: /api
+  routes:
+    ffkr-article:
+      path: /articles/**
+      serviceId: ffkr-article
+      strip-prefix: false
