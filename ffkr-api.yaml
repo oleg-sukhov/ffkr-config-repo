@@ -45,6 +45,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
+    instanceId: ${spring.application.name}:${ffkr-api.instanceId}
 zuul:
   prefix: /api
   routes:
