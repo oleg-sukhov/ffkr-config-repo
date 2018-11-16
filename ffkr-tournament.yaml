@@ -1,11 +1,11 @@
 spring:
-  profiles: heroku
-  jpa:
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
+  data:
+    jpa:
+      properties:
+        hibernate:
+          jdbc:
+            lob:
+              non_contextual_creation: true
 eureka:
   client:
     serviceUrl:
@@ -19,6 +19,8 @@ security:
 management:
   security:
     enabled: false
+server:
+  port: 8103
 
 ---
 
@@ -28,24 +30,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/ffkr
     username: os
     password: os
-  jpa:
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
-server:
-  port: 8103
-security:
-  basic:
-    enabled: false
-management:
-  security:
-    enabled: false
 
 ---
 
@@ -65,11 +54,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery-service:8100/eureka/
-server:
-  port: 8103
-security:
-  basic:
-    enabled: false
-management:
-  security:
-    enabled: false

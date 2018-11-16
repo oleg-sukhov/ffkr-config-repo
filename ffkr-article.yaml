@@ -1,16 +1,33 @@
-spring:
-  profiles: heroku
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
   instance:
-    hostname: ffkr-article-service.herokuapp.com
+    instanceId: ${spring.application.name}:${ffkr-article.instanceId}:${server.port}
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    configprops:
+      enabled: true
+logging:
+  config: classpath:logback.xml
+ffkr:
+  article:
+    crawler:
+      start-page: http://football.ua/newsarc/page%d.html
+    image-location: /usr/local/share/ffkr/photos
+server:
+  port: 8105
+
 ---
+
 spring:
   profiles: local
-  thymeleaf:
-    checkTemplateLocation: false
   data:
     mongodb:
       host: localhost
@@ -27,15 +44,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
-server:
-  port: 8105
-logging:
-  config: classpath:logback.xml
-ffkr:
-  article:
-    crawler:
-      start-page: http://football.ua/newsarc/page%d.html
-    image-location: /usr/local/share/ffkr/photos
 ---
 
 spring:
@@ -58,12 +66,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
-server:
-  port: 8105
-logging:
-  config: classpath:logback.xml
-ffkr:
-  article:
-    crawler:
-      start-page: http://football.ua/newsarc/page%d.html
-    image-location: /usr/local/share/ffkr/photos
