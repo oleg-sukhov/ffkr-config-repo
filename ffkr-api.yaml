@@ -23,7 +23,6 @@ zuul:
     ffkr-article:
       path: /article-service/**
       serviceId: ffkr-article
-      strip-prefix: false
 server:
   port: 8102
 
