@@ -15,13 +15,9 @@ management:
     configprops:
       enabled: true
 zuul:
-  prefix: /api
+  prefix: /api/**
   routes:
-    ffkr-tournament:
-      path: /tournament-service/**
-      serviceId: ffkr-tournament
     ffkr-article:
-      path: /article-service/**
       serviceId: ffkr-article
 server:
   port: 8102
