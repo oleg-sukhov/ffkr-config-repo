@@ -15,10 +15,12 @@ management:
     configprops:
       enabled: true
 zuul:
-  prefix: /api/**
+  prefix: /api
   routes:
     ffkr-article:
       path: /articles/**
+      serviceId: ffkr-article	
+      strip-prefix: false
 server:
   port: 8102
 
