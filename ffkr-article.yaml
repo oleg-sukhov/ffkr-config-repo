@@ -4,6 +4,13 @@ spring:
       port: ${rabbitmq.port}
       username: ${rabbitmq.username}
       password: ${rabbitmq.password}
+  data:
+    mongodb:
+      host: ${mongodb.host}
+      port: ${mongodb.port}
+      database: ${mongodb.database}
+      username: ${mongodb.username}
+      password: ${mongodb.password}
 eureka:
   instance:
     instanceId: ${spring.application.name}:${ffkr-article.instanceId}:${server.port}
@@ -34,13 +41,6 @@ server:
 
 spring:
   profiles: local
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: admin
-      password: os
-      username: os
 eureka:
   client:
     serviceUrl:
@@ -51,13 +51,6 @@ spring:
   profiles: docker
   hymeleaf:
     checkTemplateLocation: false
-  data:
-    mongodb:
-      host: news-db
-      port: 27017
-      database: admin
-      password: os
-      username: os
 eureka:
   client:
     serviceUrl:
