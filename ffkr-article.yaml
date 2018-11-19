@@ -1,3 +1,9 @@
+spring:
+  rabbitmq:
+      host: ${rabbitmq.host}
+      port: ${rabbitmq.port}
+      username: ${rabbitmq.username}
+      password: ${rabbitmq.password}
 eureka:
   instance:
     instanceId: ${spring.application.name}:${ffkr-article.instanceId}:${server.port}
@@ -35,11 +41,6 @@ spring:
       database: admin
       password: os
       username: os
-  rabbitmq:
-      host: 127.0.0.1
-      port: 5672
-      username: os
-      password: os
 eureka:
   client:
     serviceUrl:
@@ -57,11 +58,6 @@ spring:
       database: admin
       password: os
       username: os
-  rabbitmq:
-      host: news-queue
-      port: 5672
-      username: os
-      password: os
 eureka:
   client:
     serviceUrl:
