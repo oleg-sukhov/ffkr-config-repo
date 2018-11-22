@@ -1,11 +1,21 @@
-spring:
-  profiles: heroku
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://ffkr-discovery.herokuapp.com/eureka/
   instance:
-    hostname: ffkr-auth.herokuapp.com
+    instanceId: ${spring.application.name}:${ffkr-auth.instanceId}:${server.port}
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    configprops:
+      enabled: true
+server:
+  port: 8107
 
 ---
 
@@ -15,13 +25,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
-server:
-  port: 8106
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
 ---
 
 spring:
@@ -30,5 +34,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
-server:
-  port: 8106
