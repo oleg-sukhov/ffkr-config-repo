@@ -19,8 +19,13 @@ zuul:
   routes:
     ffkr-article:
       path: /articles/**
-      serviceId: ffkr-article	
+      serviceId: ffkr-article
       strip-prefix: false
+    ffkr-auth:
+      path: /auth/**
+      serviceId: ffkr-auth
+      strip-prefix: false
+      sensitive-headers: Cookie,Set-Cookie
 server:
   port: 8102
 
