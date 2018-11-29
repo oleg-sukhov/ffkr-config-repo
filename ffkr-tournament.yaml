@@ -6,19 +6,25 @@ spring:
           jdbc:
             lob:
               non_contextual_creation: true
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://ffkr-discovery-service.herokuapp.com/eureka/
-  instance:
-    hostname: ffkr-tournament-service.herokuapp.com
-    nonSecurePort: 80
 security:
   basic:
     enabled: false
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${ffkr-tournament.instanceId}:${server.port}
 management:
-  security:
-    enabled: false
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    configprops:
+      enabled: true
 server:
   port: 8103
 
@@ -53,4 +59,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery-service:8100/eureka/
+      defaultZone: http://ffkr-discovery:8100/eureka/
