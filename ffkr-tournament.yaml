@@ -6,16 +6,32 @@ spring:
           jdbc:
             lob:
               non_contextual_creation: true
+<<<<<<< HEAD
   datasource:
     url: jdbc:${db.vendor}://{db.host}:${db.port}/${db.database}
     username: ${db.user}
     password: ${db.password}
+=======
+>>>>>>> 9c9261ed4b8917789eebb26e5ab1bf1d5c998dcd
 security:
   basic:
     enabled: false
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${ffkr-tournament.instanceId}:${server.port}
 management:
-  security:
-    enabled: false
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,configprops
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    configprops:
+      enabled: true
 server:
   port: 8103
 
@@ -35,4 +51,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery-service:8100/eureka/
+      defaultZone: http://ffkr-discovery:8100/eureka/
