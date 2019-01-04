@@ -29,8 +29,6 @@ management:
       enabled: true
     configprops:
       enabled: true
-logging:
-  config: classpath:logback.xml
 ffkr:
   article:
     crawler:
