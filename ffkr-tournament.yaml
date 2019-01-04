@@ -6,13 +6,10 @@ spring:
           jdbc:
             lob:
               non_contextual_creation: true
-<<<<<<< HEAD
   datasource:
-    url: jdbc:${db.vendor}://{db.host}:${db.port}/${db.database}
+    url: jdbc:${db.vendor}://${db.host}:${db.port}/${db.database}
     username: ${db.user}
     password: ${db.password}
-=======
->>>>>>> 9c9261ed4b8917789eebb26e5ab1bf1d5c998dcd
 security:
   basic:
     enabled: false
