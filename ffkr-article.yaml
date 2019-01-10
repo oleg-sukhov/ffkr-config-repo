@@ -56,4 +56,4 @@ eureka:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
 logging:
-  file: "/ffkr-article/logs/ffkr-article.log"
+  file: "/ffkr-article/logs/ffkr_article.log"
