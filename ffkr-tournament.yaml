@@ -31,21 +31,19 @@ management:
       enabled: true
 server:
   port: 8103
-
 ---
-
 spring:
   profiles: local
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8100/eureka/
-
 ---
-
 spring:
   profiles: docker
 eureka:
   client:
     serviceUrl:
       defaultZone: http://ffkr-discovery:8100/eureka/
+logging:
+  file: "/ffkr-tournament/logs/ffkr_tournament.log"
