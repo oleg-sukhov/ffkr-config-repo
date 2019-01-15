@@ -26,6 +26,16 @@ zuul:
       serviceId: ffkr-auth
       strip-prefix: false
       sensitive-headers: Cookie,Set-Cookie
+security:
+  oauth2:
+    client:
+      client-id: 0oaiyx23qdhvVZoFX0h7
+      client-secret: aZ45k0yiDCA8vjfF7Y0iOalGQ90N89H-IrpW8QVW
+      access-token-uri: https://dev-407208.oktapreview.com/oauth2/default/v1/token
+      user-authorization-uri: https://dev-407208.oktapreview.com/oauth2/default/v1/authorize
+      scope: openid profile email
+    resource:
+      user-info-uri: https://dev-407208.oktapreview.com/oauth2/default/v1/userinfo
 server:
   port: 8102
 
